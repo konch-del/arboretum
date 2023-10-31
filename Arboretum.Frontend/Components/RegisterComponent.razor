@@ -1,0 +1,30 @@
+﻿@using Radzen.Blazor;
+
+<RadzenStack>
+    <RadzenText/>
+    <RadzenText />
+    <RadzenTextBox Placeholder="Имя" @bind-Value=_userName>
+
+    </RadzenTextBox>
+    <RadzenTextBox Placeholder="Почта" @bind-Value=_email>
+
+    </RadzenTextBox>
+    <RadzenTextBox Placeholder="Телефон">
+
+    </RadzenTextBox>
+    <RadzenTextBox Placeholder="Пароль" @bind-Value=_pswd>
+
+    </RadzenTextBox>
+    <RadzenTextBox Placeholder="Повторите пароль">
+
+    </RadzenTextBox>
+    <RadzenButton Text="Зарегистрироваться">
+
+    </RadzenButton>
+</RadzenStack>
+
+@code {
+    private string _pswd;
+    private string _userName;
+    private string _email;
+}

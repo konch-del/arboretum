@@ -1,0 +1,16 @@
+﻿@using Radzen.Blazor;
+@page "/login"
+
+@if (_isLogin)
+{
+    <LoginComponent/>
+}
+else
+{
+    <RegisterComponent/>
+}
+
+
+@code {
+    private bool _isLogin = false;
+}

@@ -1,0 +1,39 @@
+﻿@using Radzen.Blazor;
+
+<RadzenStack>
+    <RadzenText />
+    <RadzenText />
+    <RadzenTextBox Placeholder="Почта" Style="margin-bottom=50px" @bind-Value=_email>  
+    </RadzenTextBox>
+
+    <RadzenTextBox Placeholder="Пароль" Style="margin-bottom=50px"  @bind-Value=_pswd>
+    </RadzenTextBox>
+
+    <RadzenTextBox Placeholder="Повторите пароль">
+    </RadzenTextBox>
+
+    <RadzenRow>
+        <RadzenText Text="Забыли пароль?" Style="margin-bottom=50px">
+        </RadzenText>
+    </RadzenRow>
+
+    <RadzenButton Text="Войти" @onclick=Login>
+    </RadzenButton>
+</RadzenStack>
+
+@code {
+    private string _pswd;
+    private string _email;
+
+    private async Task Login()
+    {
+        throw new NotImplementedException();
+    } 
+
+    private async Task CheckCredentials()
+    {
+        throw new NotImplementedException();
+    }
+
+
+}
