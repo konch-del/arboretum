@@ -2,6 +2,7 @@ package ru.mirea.arboretum.arboretum.service;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import ru.mirea.arboretum.arboretum.dto.DTOConverter;
 import ru.mirea.arboretum.arboretum.dto.PlantWithParam;
 import ru.mirea.arboretum.arboretum.models.Param;
 import ru.mirea.arboretum.arboretum.models.Plant;
@@ -59,12 +60,8 @@ public class ServiceImpl implements Service {
         if(plant.isPresent()){
             List<Param> param = paramRepository.findForPlan(planId);
             if(!param.isEmpty()){
-                PlantWithParam response = PlantWithParam.builder()
-                        .name(plant.get().getName())
-                        .description(plant.get().getDescription())
-                        .params(param)
-                        .build();
-                return new ResponseEntity<>(response, HttpStatus.OK);
+                DTOConverter converter = DTOConverter.getInstance();
+                return new ResponseEntity<>(converter.convertToPlantWithParam(plant.get(), param), HttpStatus.OK);
             }else{
                 return new ResponseEntity<>(plant.get(), HttpStatus.OK);
             }
