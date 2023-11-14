@@ -37,6 +37,12 @@
     <AppxPackagedFile Include="D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Arboretum.Frontend.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\Projects\GardenBins\Arboretum.Frontend\appsettings.Development.json">
+      <PackagePath>appsettings.Development.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Programming\Projects\GardenBins\Arboretum.Frontend\Mocks\myPlantsMock.json">
+      <PackagePath>Mocks\myPlantsMock.json</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Arboretum.Frontend.deps.json">
       <PackagePath>Arboretum.Frontend.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -732,6 +738,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Хозяин\.nuget\packages\microsoft.windowsappsdk\1.2.221209.1\lib\net6.0-windows10.0.18362.0\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Хозяин\.nuget\packages\newtonsoft.json\13.0.3\lib\net6.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Хозяин\.nuget\packages\radzen.blazor\4.19.0\lib\net7.0\Radzen.Blazor.dll">
       <PackagePath>Radzen.Blazor.dll</PackagePath>

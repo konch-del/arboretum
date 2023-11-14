@@ -35,6 +35,7 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.Primitives.dll",
 		"Microsoft.JSInterop.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Newtonsoft.Json.dll",
 		"Radzen.Blazor.dll",
 		"System.IO.Pipelines.dll",
 		"System.Linq.Dynamic.Core.dll",

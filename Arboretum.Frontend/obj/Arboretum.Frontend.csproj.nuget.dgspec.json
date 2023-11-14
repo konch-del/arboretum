@@ -90,6 +90,10 @@
               "version": "[7.0.96, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Radzen.Blazor": {
               "target": "Package",
               "version": "[4.19.0, )"
@@ -212,6 +216,10 @@
               "version": "[7.0.96, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Radzen.Blazor": {
               "target": "Package",
               "version": "[4.19.0, )"
@@ -278,6 +286,10 @@
               "target": "Package",
               "version": "[7.0.96, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Radzen.Blazor": {
               "target": "Package",
@@ -356,6 +368,10 @@
               "target": "Package",
               "version": "[1.2.221209.1, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Radzen.Blazor": {
               "target": "Package",

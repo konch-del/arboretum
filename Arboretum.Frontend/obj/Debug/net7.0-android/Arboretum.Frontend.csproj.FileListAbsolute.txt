@@ -996,6 +996,7 @@ D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\l
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\Radzen.Blazor.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Linq.Dynamic.Core.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Linq.Dynamic.Core.pdb
+D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\Newtonsoft.Json.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\mscorlib.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Collections.Concurrent.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Data.Common.dll
@@ -1009,3 +1010,5 @@ D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\a
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Runtime.Extensions.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Runtime.Serialization.Formatters.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-android\android\assets\System.Xml.dll
+D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-android\appsettings.Development.json
+D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-android\Mocks\myPlantsMock.json

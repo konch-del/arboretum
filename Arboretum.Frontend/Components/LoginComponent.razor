@@ -1,15 +1,13 @@
-﻿@using Radzen.Blazor;
+﻿@using Arboretum.Frontend.Data;
+@using Radzen.Blazor;
 
+<div>
 <RadzenStack>
-    <RadzenText />
-    <RadzenText />
+    <link rel="stylesheet" href="../ElementsStyles.css"/>
     <RadzenTextBox Placeholder="Почта" Style="margin-bottom=50px" @bind-Value=_email>  
     </RadzenTextBox>
 
     <RadzenTextBox Placeholder="Пароль" Style="margin-bottom=50px"  @bind-Value=_pswd>
-    </RadzenTextBox>
-
-    <RadzenTextBox Placeholder="Повторите пароль">
     </RadzenTextBox>
 
     <RadzenRow>
@@ -17,17 +15,19 @@
         </RadzenText>
     </RadzenRow>
 
-    <RadzenButton Text="Войти" @onclick=Login>
+    <RadzenButton Text="Войти" Click="Login">
     </RadzenButton>
 </RadzenStack>
+</div>
 
 @code {
     private string _pswd;
     private string _email;
 
-    private async Task Login()
+    private void Login()
     {
-        throw new NotImplementedException();
+        ApiInteractor.Login(_email, _pswd);
+        Console.WriteLine("Send login to backend");
     } 
 
     private async Task CheckCredentials()

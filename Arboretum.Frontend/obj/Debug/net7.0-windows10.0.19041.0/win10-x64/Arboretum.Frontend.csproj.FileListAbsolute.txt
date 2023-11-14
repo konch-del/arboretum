@@ -353,3 +353,6 @@ D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-windows10
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Radzen.Blazor.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\System.Linq.Dynamic.Core.dll
 D:\Programming\Projects\GardenBins\Arboretum.Frontend\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\login_image.scale-100.jpeg
+D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
+D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\appsettings.Development.json
+D:\Programming\Projects\GardenBins\Arboretum.Frontend\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Mocks\myPlantsMock.json

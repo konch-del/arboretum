@@ -1,0 +1,13 @@
+{
+  "Plants" : [
+    {
+      "id": "1",
+      "name": "bigus",
+      "description": "dickus"
+    },
+    {
+      "id": "2",
+      "name": "smallus",
+      "description": "dickus"
+    }] 
+}

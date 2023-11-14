@@ -31,8 +31,10 @@ wwwroot\_content\Radzen.Blazor\fonts\SourceSansPro-Regular.woff
 wwwroot\_content\Radzen.Blazor\fonts\SourceSansPro-Semibold.woff
 wwwroot\_content\Radzen.Blazor\fonts\SourceSansPro-SemiboldIt.woff
 wwwroot\_content\Radzen.Blazor\Radzen.Blazor.js
+appsettings.Development.json
 Components\MainLayout.razor.css
 Components\NavMenu.razor.css
+Mocks\myPlantsMock.json
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png

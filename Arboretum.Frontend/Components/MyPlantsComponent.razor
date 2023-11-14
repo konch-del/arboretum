@@ -1,0 +1,23 @@
+﻿@using Arboretum.Frontend.Data;
+@using Arboretum.Frontend.Dtos;
+@using Radzen.Blazor;
+
+<div>
+    @foreach (var plant in myPlants)
+    {
+        <div>
+            <RadzenButton></RadzenButton>
+        </div>
+    }
+</div>
+
+@code {
+    private List<PlantDto> myPlants;
+
+    protected override Task OnInitializedAsync()
+    {
+        //myPlants = ApiInteractor.GetUserPlant().Plants;
+        myPlants = MockInteractor.GetUserPlant().Plants;
+        return base.OnInitializedAsync();
+    }
+}
