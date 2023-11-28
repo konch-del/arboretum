@@ -27,7 +27,7 @@ services:
     depends_on:
       - db
     environment:
-      #- SPRING_SQL_INIT_MODE=always
+      - SPRING_SQL_INIT_MODE=always
       - SPRING_DATASOURCE_URL=jdbc:mysql
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
