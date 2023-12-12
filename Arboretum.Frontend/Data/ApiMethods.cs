@@ -10,7 +10,7 @@ namespace Arboretum.Frontend.Data
     {
         //TODO
         public static string GetAllPlants = "";
-        public static string GetUserPlants = "";
+        public static string GetUserPlants = "{0}/myplant?userId={1}";
         public static string Login = "{0}/login?email={1}&password={2}";
         public static string Register = "";
     }

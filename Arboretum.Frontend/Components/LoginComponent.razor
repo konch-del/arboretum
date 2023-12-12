@@ -4,14 +4,14 @@
 <div>
 <RadzenStack>
     <link rel="stylesheet" href="../ElementsStyles.css"/>
-    <RadzenTextBox Placeholder="Почта" Style="margin-bottom=50px" @bind-Value=_email>  
+    <RadzenTextBox Placeholder="Почта" Style="margin-bottom:50px" @bind-Value=_email>  
     </RadzenTextBox>
 
-    <RadzenTextBox Placeholder="Пароль" Style="margin-bottom=50px"  @bind-Value=_pswd>
+    <RadzenTextBox Placeholder="Пароль" Style="margin-bottom:50px"  @bind-Value=_pswd>
     </RadzenTextBox>
 
     <RadzenRow>
-        <RadzenText Text="Забыли пароль?" Style="margin-bottom=50px">
+        <RadzenText Text="Забыли пароль?" Style="margin-bottom:50px">
         </RadzenText>
     </RadzenRow>
 
@@ -26,14 +26,8 @@
 
     private void Login()
     {
-        ApiInteractor.Login(_email, _pswd);
+        var loginId = ApiInteractor.Login(_email, _pswd);
         Console.WriteLine("Send login to backend");
+        User.SetUserInfo(_email, loginId);
     } 
-
-    private async Task CheckCredentials()
-    {
-        throw new NotImplementedException();
-    }
-
-
 }

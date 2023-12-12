@@ -12,11 +12,6 @@ namespace Arboretum.Frontend.Data
     {
         public static UserPlantsDto GetUserPlant()
         {
-            return GetPlayerPlants();
-        }
-
-        private static UserPlantsDto GetPlayerPlants()
-        {
             using (StreamReader reader = new StreamReader("D:\\Programming\\Projects\\GardenBins\\Arboretum.Frontend\\Mocks\\myPlantsMock.json"))
             {
                 string json = reader.ReadToEnd();

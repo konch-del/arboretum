@@ -9,14 +9,14 @@ namespace Arboretum.Frontend.Data
     {
         private static HttpClient _httpClient = new HttpClient();
 
-        public static UserPlantsDto GetUserPlant()
+        public static UserPlantsDto GetUserPlant(long userId)
         {
-            return SendGetRequest<UserPlantsDto>(String.Format(ApiMethods.GetUserPlants)).Result;
+            return SendGetRequest<UserPlantsDto>(String.Format(ApiMethods.GetUserPlants, Constants.ApiPath, userId)).Result;
         }
 
-        public static UserPlantsDto Login(string email, string pswd)
+        public static string Login(string email, string pswd)
         {
-            return SendPostRequest<UserPlantsDto>(String.Format(ApiMethods.Login, Constants.ApiPath, email, pswd)).Result;
+            return SendPostRequest<string>(String.Format(ApiMethods.Login, Constants.ApiPath, email, pswd)).Result;
         }
 
         private static async Task<TResult> SendGetRequest<TResult>(string query)

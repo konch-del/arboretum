@@ -3,11 +3,17 @@
 @using Radzen.Blazor;
 
 <div>
-    @foreach (var plant in myPlants)
+    <RadzenButton Click="GetUserPLants" Text="Get user plants"></RadzenButton>
+
+    @if (myPlants != null)
     {
-        <div>
-            <RadzenButton></RadzenButton>
-        </div>
+        @foreach (var plant in myPlants)
+        {
+            <div>
+                <RadzenButton Text="This is a template"></RadzenButton>
+            </div>
+        }
+
     }
 </div>
 
@@ -16,8 +22,11 @@
 
     protected override Task OnInitializedAsync()
     {
-        //myPlants = ApiInteractor.GetUserPlant().Plants;
-        myPlants = MockInteractor.GetUserPlant().Plants;
         return base.OnInitializedAsync();
+    }
+
+    private void GetUserPLants()
+    {
+        myPlants = ApiInteractor.GetUserPlant(1).Plants;
     }
 }
