@@ -15,6 +15,14 @@ CREATE TABLE plant
     description TEXT NOT NULL
 );
 
+CREATE TABLE plant
+(
+    bucketId INTEGER PRIMARY KEY AUTO_INCREMENT,
+    plantid INTEGER,
+    name INTEGER,
+    FOREIGN KEY (plantid)  REFERENCES plant (plantid)
+);
+
 CREATE TABLE plantParam
 (
     plantParamid INTEGER PRIMARY KEY AUTO_INCREMENT,

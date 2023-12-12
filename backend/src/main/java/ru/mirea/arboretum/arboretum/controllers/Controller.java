@@ -1,9 +1,13 @@
 package ru.mirea.arboretum.arboretum.controllers;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import ru.mirea.arboretum.arboretum.models.User;
 import ru.mirea.arboretum.arboretum.service.Service;
+
+import java.io.IOException;
 
 @RestController
 public class Controller {
@@ -37,6 +41,16 @@ public class Controller {
     @GetMapping("/myplant")
     public ResponseEntity<?> myPlant(@RequestParam Long userId){
         return service.myPlant(userId);
+    }
+
+    @PostMapping("/loadPicture")
+    public ResponseEntity<?> loadPicture(@RequestParam("file") MultipartFile file, @RequestParam Long plantId){
+        return service.loadPicture(file, plantId);
+    }
+
+    @GetMapping(value = "/getPicture", produces = MediaType.IMAGE_JPEG_VALUE)
+    public @ResponseBody ResponseEntity<?> pic(@RequestParam Long plantId){
+        return service.getPicture(plantId);
     }
 
 }
