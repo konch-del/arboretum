@@ -1,4 +1,6 @@
 # Default ignored files
-/.vs
-/Arboretum.Frontend/.gitignore
-*.gitignore
+*.vs
+.gitignore
+Arboretum.Frontend/bin
+Arboretum.Frontend/obj
+Arboretum.Frontend/Platforms
