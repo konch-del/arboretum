@@ -40,7 +40,7 @@ public class ServiceImpl implements Service {
                 .password(user.getPassword())
                 .build();
         userRepository.save(newUser);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(newUser.getUserId(), HttpStatus.CREATED);
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ServiceImpl implements Service {
         Optional<User> user = userRepository.findByEmail(email);
         if(user.isPresent()){
             if(user.get().getPassword().equals(password)){
-                return new ResponseEntity<>(HttpStatus.OK);
+                return new ResponseEntity<>(user.get().getUserId(), HttpStatus.OK);
             }else{
                 return new ResponseEntity<>(HttpStatus.FORBIDDEN);
             }
@@ -74,7 +74,7 @@ public class ServiceImpl implements Service {
     @Override
     public ResponseEntity<?> myPlant(Long userId) {
         List<Plant> myPlants = statusRepository.findMyPlant(userId);
-        if(myPlants.isEmpty()){
+        if(!myPlants.isEmpty()){
             return new ResponseEntity<>(myPlants, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
