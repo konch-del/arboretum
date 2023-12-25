@@ -15,7 +15,7 @@ CREATE TABLE plant
     description TEXT NOT NULL
 );
 
-CREATE TABLE plant
+CREATE TABLE bucket
 (
     bucketId INTEGER PRIMARY KEY AUTO_INCREMENT,
     plantid INTEGER,
