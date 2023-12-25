@@ -1,30 +1,42 @@
 ﻿@using Radzen.Blazor;
+@using Arboretum.Frontend.Data;
 
 <RadzenStack>
-    <RadzenText/>
-    <RadzenText />
-    <RadzenTextBox Placeholder="Имя" @bind-Value=_userName>
+    <RadzenRow>
+        <RadzenTextBox Placeholder="Имя" @bind-Value=_userName/>
+    </RadzenRow>
 
-    </RadzenTextBox>
-    <RadzenTextBox Placeholder="Почта" @bind-Value=_email>
+    <RadzenRow>
+        <RadzenTextBox Placeholder="Почта" @bind-Value=_email/>
+    </RadzenRow>
 
-    </RadzenTextBox>
-    <RadzenTextBox Placeholder="Телефон">
+    <RadzenRow>
+        <RadzenTextBox Placeholder="Телефон" @bind-Value=_phone/>
+    </RadzenRow>
 
-    </RadzenTextBox>
-    <RadzenTextBox Placeholder="Пароль" @bind-Value=_pswd>
+    <RadzenRow>
+        <RadzenTextBox Placeholder="Пароль" @bind-Value=_pswd/>
+    </RadzenRow>
 
-    </RadzenTextBox>
-    <RadzenTextBox Placeholder="Повторите пароль">
+    <RadzenRow>
+        <RadzenTextBox Placeholder="Повторите пароль"/>
+    </RadzenRow>
 
-    </RadzenTextBox>
-    <RadzenButton Text="Зарегистрироваться">
+    <RadzenRow>
+        <RadzenButton Text="Создать аккаунт" Click="RegisterAccount"/>
+    </RadzenRow>
 
-    </RadzenButton>
 </RadzenStack>
 
 @code {
     private string _pswd;
     private string _userName;
     private string _email;
+    private string _phone;
+
+    private void RegisterAccount()
+    {
+        var loginId = ApiInteractor.RegisterUser(_email, _pswd, _phone);
+        User.SetUserInfo(_email, loginId);
+    }
 }

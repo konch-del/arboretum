@@ -3,22 +3,29 @@
 @using Radzen.Blazor;
 
 <div>
-    <RadzenButton Click="GetUserPLants" Text="Get user plants"></RadzenButton>
+    <RadzenButton Click="GetUserPLants" Text="Get user plants"/>
 
-    @if (myPlants != null)
+    @if (_myPlants != null)
     {
-        @foreach (var plant in myPlants)
+        foreach(var plant in _myPlants)
         {
-            <div>
-                <RadzenButton Text="This is a template"></RadzenButton>
-            </div>
+            <RadzenRow>
+                <RadzenImage Path=""/>
+            </RadzenRow>
+            <RadzenRow>
+                <RadzenText Text=@plant.Name/>
+            </RadzenRow>
+            <RadzenRow>
+                <RadzenText Text=@plant.Description />
+            </RadzenRow>
         }
 
     }
 </div>
 
 @code {
-    private List<PlantDto> myPlants;
+    private List<PlantDto> _myPlants;
+    private RadzenDataGrid<PlantDto> _plantsGrid;
 
     protected override Task OnInitializedAsync()
     {
@@ -27,6 +34,20 @@
 
     private void GetUserPLants()
     {
-        myPlants = ApiInteractor.GetUserPlant(1).Plants;
+        _myPlants = ApiInteractor.GetUserPlant(1).Plants;
+        if (_myPlants.Count > 0) 
+        {
+            //TODO
+            /*var tempPhotosDir = Path.Combine(Directory.GetCurrentDirectory(), "TempPhotos");
+            if (!Directory.Exists(tempPhotosDir))
+            {
+                Directory.CreateDirectory(tempPhotosDir);
+            }
+
+            foreach (var plant in _myPlants)
+            {
+                  
+            }*/
+        }
     }
 }

@@ -4,13 +4,20 @@
 @if (_isLogin)
 {
     <LoginComponent/>
+    <RadzenButton Text="Зарегистрироваться" Click="SwapComponent"/>
 }
 else
 {
     <RegisterComponent/>
+    <RadzenButton Text="Уже зарегистрированы?" Click="SwapComponent"/>
 }
 
 
 @code {
     private bool _isLogin = true;
+
+    private void SwapComponent()
+    {
+        _isLogin = !_isLogin;
+    }
 }

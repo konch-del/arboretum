@@ -13,5 +13,7 @@ namespace Arboretum.Frontend.Dtos
         public string Name;
 
         public string Description;
+
+        public List<string> PhotoPaths;
     }
 }

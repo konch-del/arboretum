@@ -3,16 +3,14 @@
 
 <div>
 <RadzenStack>
-    <link rel="stylesheet" href="../ElementsStyles.css"/>
-    <RadzenTextBox Placeholder="Почта" Style="margin-bottom:50px" @bind-Value=_email>  
-    </RadzenTextBox>
-
-    <RadzenTextBox Placeholder="Пароль" Style="margin-bottom:50px"  @bind-Value=_pswd>
-    </RadzenTextBox>
-
     <RadzenRow>
-        <RadzenText Text="Забыли пароль?" Style="margin-bottom:50px">
-        </RadzenText>
+        <RadzenTextBox Placeholder="Почта" Style="margin-bottom:10px" @bind-Value=_email/>
+    </RadzenRow>
+    <RadzenRow>
+        <RadzenTextBox Placeholder="Пароль" Style="margin-bottom:10px"  @bind-Value=_pswd/>
+    </RadzenRow>
+    <RadzenRow>
+        <RadzenText Text="Забыли пароль?" Style="margin-bottom:10px"/>
     </RadzenRow>
 
     <RadzenButton Text="Войти" Click="Login">
@@ -27,7 +25,6 @@
     private void Login()
     {
         var loginId = ApiInteractor.Login(_email, _pswd);
-        Console.WriteLine("Send login to backend");
         User.SetUserInfo(_email, loginId);
     } 
 }

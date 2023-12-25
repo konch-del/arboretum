@@ -1,5 +1,7 @@
 ﻿using Arboretum.Frontend.Dtos;
+using Microsoft.AspNetCore.Components.Forms;
 using Radzen;
+using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Text;
 
@@ -19,7 +21,35 @@ namespace Arboretum.Frontend.Data
             return SendPostRequest<string>(String.Format(ApiMethods.Login, Constants.ApiPath, email, pswd)).Result;
         }
 
-        private static async Task<TResult> SendGetRequest<TResult>(string query)
+        public static string RegisterUser(string email, string pswd, string phone)
+        {
+            var body = new
+            {
+                User = new
+                {
+                    Email = email,
+                    Phone = phone,
+                    Password = pswd
+                }
+            };
+
+            return SendPostRequest<string>(
+                String.Format(ApiMethods.Login, Constants.ApiPath, email, pswd), body).Result;
+        }
+
+        public static async void LoadPicture(IBrowserFile picture, string plantId)
+        {
+            using (var multipartFormContent = new MultipartFormDataContent())
+            {
+                var fileStreamContent = new StreamContent(picture.OpenReadStream());
+                fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/png");
+                multipartFormContent.Add(fileStreamContent, name: "file", fileName: picture.Name);
+                await SendPostRequestWithFile(String.Format(
+                    ApiMethods.LoadPicture, Constants.ApiPath, plantId), multipartFormContent);
+            }
+        }
+
+        private static async Task<TResult> SendGetRequest <TResult>(string query)
         {
             var request = new HttpRequestMessage(HttpMethod.Get, query);
             var response = await ExecuteRequest(request);
@@ -27,22 +57,23 @@ namespace Arboretum.Frontend.Data
             return JsonInteractor.DeserializeJson<TResult>(content);
         }
 
-        private static async Task<TResult> SendGetRequestWithBody<TResult>(string query, string body)
+        private static async Task SendPostRequestWithFile(string query, MultipartFormDataContent fileContent)
         {
-            var request = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri(query),
-                Content = new StringContent(body, Encoding.UTF8, MediaTypeNames.Application.Json)
-            };
+            var response = await _httpClient.PostAsync(query, fileContent);
+            response.EnsureSuccessStatusCode();
+        }
 
+        private static async Task<TResult> SendPostRequest<TResult>(string query)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, query);
             var response = await ExecuteRequest(request);
             var content = response.Content.ReadAsStringAsync().Result;
             return JsonInteractor.DeserializeJson<TResult>(content);
         }
-        private static async Task<TResult> SendPostRequest<TResult>(string query)
+        private static async Task<TResult> SendPostRequest<TResult>(string query, object body)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, query);
+            request.Content = new StringContent(body.ToString(), Encoding.UTF8, "application/json");
             var response = await ExecuteRequest(request);
             var content = response.Content.ReadAsStringAsync().Result;
             return JsonInteractor.DeserializeJson<TResult>(content);
