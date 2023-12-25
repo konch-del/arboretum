@@ -1,5 +1,5 @@
 -- Insert data into the 'param' table
-INSERT INTO param (name, description, value) VALUES
+INSERT INTO param (name, description, value1) VALUES
   ('Param1', 'Description for Param1', 10),
   ('Param2', 'Description for Param2', 20),
   ('Param3', 'Description for Param3', 30);
@@ -32,7 +32,7 @@ INSERT INTO status (description) VALUES
   ('Status3');
 
 -- Insert data into the 'plantstatus' table
-INSERT INTO plantstatus (plantid, userid, value) VALUES
+INSERT INTO plantstatus (plantid, userid, value1) VALUES
   (1, 1, 1),
   (1, 2, 2),
   (2, 2, 3),

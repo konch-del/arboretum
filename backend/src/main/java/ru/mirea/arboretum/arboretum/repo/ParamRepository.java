@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ParamRepository extends JpaRepository<Param, Long> {
 
-    @Query(value = "SELECT * FROM params WHERE plantId = ?1", nativeQuery = true)
+    @Query(value = "SELECT p.* FROM param p, plantParam pp WHERE pp.plantId = ?1 AND pp.paramid = p.paramid", nativeQuery = true)
     List<Param> findForPlan(Long plant);
 }

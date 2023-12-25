@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface StatusRepository extends JpaRepository<PlantStatus, Long> {
 
-    @Query(value = "SELECT * " +
+    @Query(value = "SELECT p.* " +
             "FROM plantStatus ps," +
             "plant p" +
             "WHERE p.plantId = ps.plantId AND ps.userId = ?1", nativeQuery = true)

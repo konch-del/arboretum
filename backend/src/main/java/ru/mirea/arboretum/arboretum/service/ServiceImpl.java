@@ -35,10 +35,9 @@ public class ServiceImpl implements Service {
 
     @Override
     public ResponseEntity<?> saveUser(User user) {
-        User newUser = User.builder()
-                .email(user.getEmail())
-                .password(user.getPassword())
-                .build();
+        User newUser = new User();
+        newUser.setEmail(user.getEmail());
+        newUser.setPassword(user.getPassword());
         userRepository.save(newUser);
         return new ResponseEntity<>(newUser.getUserId(), HttpStatus.CREATED);
     }
@@ -89,10 +88,9 @@ public class ServiceImpl implements Service {
                 Bucket bucket = bucketRepository.findForPlant(plantId);
                 if (bucket == null) {
                     MinioController.createBucket(plantId);
-                    bucket = Bucket.builder()
-                            .plant(plant.get())
-                            .bucketId(plantId)
-                            .build();
+                    bucket = new Bucket();
+                    bucket.setPlant(plant.get().getPlantId());
+                    bucket.setBucketId(plantId);
                     bucketRepository.save(bucket);
                 }
                 MinioController.loadImage(plantId, getFile(file));

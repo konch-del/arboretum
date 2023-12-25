@@ -1,7 +1,7 @@
 package ru.mirea.arboretum.arboretum.models;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,8 +9,8 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Builder
 @Table(name = "plantstatus")
+@NoArgsConstructor
 public class PlantStatus {
 
     @Id
@@ -18,16 +18,12 @@ public class PlantStatus {
     @Column(name="plantstatusid")
     private Long statusId;
 
-    private String param;
-
-    @Column(name = "value")
+    @Column(name = "value1")
     private int value;
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
+    @Column(name = "userid")
+    private Long user;
 
-    @ManyToOne
-    @JoinColumn(name = "plantId")
-    private Plant plant;
+    @Column(name = "plantid")
+    private Long plant;
 }

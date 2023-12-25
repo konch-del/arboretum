@@ -9,20 +9,14 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "param")
+@Table(name = "status")
 @NoArgsConstructor
-public class Param {
-
+public class Status {
     @Id
-    @Column(name = "paramid")
-    private Long paramId;
-
-    @Column(name = "name")
-    private String name;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "statusid")
+    private Long plantId;
 
     @Column(name = "description")
     private String description;
-
-    @Column(name = "value1")
-    private int value;
 }

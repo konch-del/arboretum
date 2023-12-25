@@ -1,7 +1,7 @@
 package ru.mirea.arboretum.arboretum.models;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -10,8 +10,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Builder
 @Table(name = "user1")
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -28,6 +28,4 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToMany
-    private List<PlantStatus> plantStatuses;
 }
