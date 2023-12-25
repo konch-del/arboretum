@@ -1,0 +1,40 @@
+﻿@using Arboretum.Frontend.Data;
+@using Arboretum.Frontend.Dtos;
+@using Radzen.Blazor
+<h3>PlantInfo</h3>
+<div>
+    <RadzenRow>
+        <RadzenTextBox @bind-Value=@_plantId/>
+        <RadzenButton Click="GetPlantById" Text="Get plant information"/>
+    </RadzenRow>
+
+    <RadzenRow>
+        @if (_plant != null)
+        {
+            <RadzenRow>
+                <RadzenImage Path=@_plant.PhotoPaths.FirstOrDefault()/>
+            </RadzenRow>
+            <RadzenRow>
+                <RadzenText Text=@_plant.Name/>
+            </RadzenRow>
+            <RadzenRow>
+                <RadzenText Text=@_plant.Description/>
+            </RadzenRow>
+        }
+    </RadzenRow>
+</div>
+
+@code {
+    private string _plantId;
+    private PlantDto _plant;
+
+    private void GetPlantById()
+    {
+        if (_plantId == "")
+        {
+            return;
+        }
+
+        _plant = ApiInteractor.GetPlantById(_plantId);
+    }
+}

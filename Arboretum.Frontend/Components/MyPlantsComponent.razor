@@ -19,7 +19,6 @@
                 <RadzenText Text=@plant.Description />
             </RadzenRow>
         }
-
     }
 </div>
 
@@ -34,11 +33,10 @@
 
     private void GetUserPLants()
     {
-        _myPlants = ApiInteractor.GetUserPlant(1).Plants;
+        /*_myPlants = ApiInteractor.GetUserPlant(User.GetUserId()).Plants;
         if (_myPlants.Count > 0) 
         {
-            //TODO
-            /*var tempPhotosDir = Path.Combine(Directory.GetCurrentDirectory(), "TempPhotos");
+            var tempPhotosDir = Path.Combine(Directory.GetCurrentDirectory(), "TempPhotos");
             if (!Directory.Exists(tempPhotosDir))
             {
                 Directory.CreateDirectory(tempPhotosDir);
@@ -47,7 +45,8 @@
             foreach (var plant in _myPlants)
             {
                   
-            }*/
+            }
         }
+        */
     }
 }

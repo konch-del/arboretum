@@ -15,11 +15,11 @@
     </RadzenRow>
 
     <RadzenRow>
-        <RadzenTextBox Placeholder="Пароль" @bind-Value=_pswd/>
+        <RadzenPassword Placeholder="Пароль" @bind-Value=_pswd />
     </RadzenRow>
 
     <RadzenRow>
-        <RadzenTextBox Placeholder="Повторите пароль"/>
+        <RadzenPassword Placeholder="Повторите пароль"  @bind-Value=_repeatPswd/>
     </RadzenRow>
 
     <RadzenRow>
@@ -30,12 +30,18 @@
 
 @code {
     private string _pswd;
+    private string _repeatPswd;
     private string _userName;
     private string _email;
     private string _phone;
 
     private void RegisterAccount()
     {
+        if (_repeatPswd != _pswd)
+        {
+            return;
+        }
+
         var loginId = ApiInteractor.RegisterUser(_email, _pswd, _phone);
         User.SetUserInfo(_email, loginId);
     }

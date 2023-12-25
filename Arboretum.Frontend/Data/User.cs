@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Arboretum.Frontend.Data
+﻿namespace Arboretum.Frontend.Data
 {
     public class User
     {
@@ -16,7 +10,7 @@ namespace Arboretum.Frontend.Data
 
         private User()
         {
-
+            _id = "1";
         }
 
         public static User GetUserInstance()
