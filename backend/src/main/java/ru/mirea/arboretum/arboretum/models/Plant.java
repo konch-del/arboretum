@@ -11,14 +11,18 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
+@Table(name = "plant")
 public class Plant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "plantid")
     private Long plantId;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "description")
     private String description;
 
     @OneToMany

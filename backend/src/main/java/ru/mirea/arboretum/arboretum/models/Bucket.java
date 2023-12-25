@@ -10,13 +10,16 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Builder
+@Table(name = "bucket")
 public class Bucket {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "bucketId")
     private Long bucketId;
 
     @OneToOne
     private Plant plant;
 
+    @Column(name = "name")
     private String name;
 }

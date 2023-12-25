@@ -3,11 +3,14 @@ version: '2'
 services:
   db:
     image: mysql
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password --init-file /data/application/init.sql
     restart: always
     container_name: db
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: arboretum
+    volumes:
+      - ./init.sql:/data/application/init.sql
 
   adminer:
     image: adminer
@@ -21,6 +24,7 @@ services:
     ports:
       - '9000:9000'
       - '9001:9001'
+    container_name: minio
     environment:
       - MINIO_ROOT_USER=minioadmin
       - MINIO_ROOT_PASSWORD=minioadmin
@@ -38,6 +42,6 @@ services:
       - minio
     environment:
       - SPRING_SQL_INIT_MODE=always
-      - SPRING_DATASOURCE_URL=jdbc:mysql
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/mysql?useSSL=false
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root

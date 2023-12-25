@@ -1,6 +1,6 @@
 
 -- create
-CREATE TABLE param
+CREATE TABLE IF NOT EXISTS param
 (
   paramid INTEGER PRIMARY KEY AUTO_INCREMENT,
   name TEXT NOT NULL,
@@ -8,14 +8,14 @@ CREATE TABLE param
   value INTEGER NOT NULL
 );
 
-CREATE TABLE plant
+CREATE TABLE IF NOT EXISTS plant
 (
     plantid INTEGER PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL,
     description TEXT NOT NULL
 );
 
-CREATE TABLE bucket
+CREATE TABLE IF NOT EXISTS bucket
 (
     bucketId INTEGER PRIMARY KEY AUTO_INCREMENT,
     plantid INTEGER,
@@ -23,7 +23,7 @@ CREATE TABLE bucket
     FOREIGN KEY (plantid)  REFERENCES plant (plantid)
 );
 
-CREATE TABLE plantParam
+CREATE TABLE IF NOT EXISTS plantParam
 (
     plantParamid INTEGER PRIMARY KEY AUTO_INCREMENT,
     plantid INTEGER,
@@ -34,7 +34,7 @@ CREATE TABLE plantParam
 );
 
 -- create
-CREATE TABLE user
+CREATE TABLE IF NOT EXISTS user1
 (
   userid INTEGER PRIMARY KEY AUTO_INCREMENT,
   email TEXT NOT NULL,
@@ -42,19 +42,19 @@ CREATE TABLE user
   password TEXT NOT NULL
 );
 
-create TABLE status(
+create TABLE IF NOT EXISTS status(
 statusid INTEGER PRIMARY KEY AUTO_INCREMENT,
 description TEXT NOT NULL
 );
 -- create
-CREATE TABLE plantstatus
+CREATE TABLE IF NOT EXISTS plantstatus
 (
   plantstatusid INTEGER PRIMARY KEY AUTO_INCREMENT,
   plantid INTEGER,
   userid INTEGER,
   value INTEGER,
    FOREIGN KEY (plantid)  REFERENCES plant (plantid),
-  FOREIGN KEY (userid)  REFERENCES user (userid),
+  FOREIGN KEY (userid)  REFERENCES user1 (userid),
   FOREIGN KEY (value)  REFERENCES status (statusid)
 );
 

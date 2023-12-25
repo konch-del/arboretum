@@ -20,7 +20,7 @@ INSERT INTO plantParam (plantid, paramid) VALUES
   (3, 3);
 
 -- Insert data into the 'user' table
-INSERT INTO user (email, phoneNumber, password) VALUES
+INSERT INTO user1 (email, phoneNumber, password) VALUES
   ('user1@example.com', '123-456-7890', 'password1'),
   ('user2@example.com', '987-654-3210', 'password2'),
   ('user3@example.com', NULL, 'password3');

@@ -7,6 +7,6 @@ import ru.mirea.arboretum.arboretum.models.User;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    @Query(value = "SELECT * FROM user WHERE email = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM user1 WHERE email = ?1", nativeQuery = true)
     Optional<User> findByEmail(String email);
 }

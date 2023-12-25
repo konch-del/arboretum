@@ -10,14 +10,17 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Builder
+@Table(name = "plantstatus")
 public class PlantStatus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="plantstatusid")
     private Long statusId;
 
     private String param;
 
+    @Column(name = "value")
     private int value;
 
     @ManyToOne
