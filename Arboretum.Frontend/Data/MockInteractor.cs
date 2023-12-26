@@ -16,16 +16,16 @@ namespace Arboretum.Frontend.Data
             }
         }
 
-        public static int Login()
+        public static string Login()
         {
             Console.WriteLine("Login into account");
-            return 1;
+            return "1";
         }
 
-        public static int Register()
+        public static string Register()
         {
             Console.WriteLine("Registered account");
-            return 1;
+            return "1";
         }
 
         public static void LoadPictures()
@@ -33,9 +33,9 @@ namespace Arboretum.Frontend.Data
             Console.WriteLine("Loaded pictures succesfully");
         }
 
-        public static string GetPicture (int id)
+        public static string GetPicture (string id)
         {
-            return $"{WorkingDirectory}/Photos/{id}";
+            return $"{WorkingDirectory}\\Photos\\{id}.jpg";
         }
     }
 }

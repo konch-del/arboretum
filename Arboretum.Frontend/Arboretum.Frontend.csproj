@@ -54,6 +54,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Mocks\Photos\1.jpg" />
+      <None Remove="Mocks\Photos\2.jpg" />
       <None Remove="Resources\Images\login_image.jpeg" />
     </ItemGroup>
 
@@ -64,12 +66,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Mocks\Photos\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Resource Include="Mocks\myPlantsMock.json">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Mocks\Photos\1.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Mocks\Photos\2.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>
 

@@ -7,12 +7,11 @@
         <RadzenTextBox @bind-Value=@_plantId/>
         <RadzenButton Click="GetPlantById" Text="Get plant information"/>
     </RadzenRow>
-
     <RadzenRow>
         @if (_plant != null)
         {
             <RadzenRow>
-                <RadzenImage Path=@_plant.PhotoPaths.FirstOrDefault()/>
+                <RadzenImage Path=@_plant.PhotoPaths.FirstOrDefault() width="300px" height="300px" />
             </RadzenRow>
             <RadzenRow>
                 <RadzenText Text=@_plant.Name/>
@@ -22,11 +21,16 @@
             </RadzenRow>
         }
     </RadzenRow>
+    <RadzenRow Style="margin-top:100px">
+        <InputFile Text="Выбрать фотографию" OnChange="LoadPictures" />
+        <RadzenButton Text="Загрузить" Click=Upload></RadzenButton>
+    </RadzenRow>
 </div>
 
 @code {
     private string _plantId;
     private PlantDto _plant;
+    private IReadOnlyList<IBrowserFile> _pictures;
 
     private void GetPlantById()
     {
@@ -36,5 +40,24 @@
         }
 
         _plant = ApiInteractor.GetPlantById(_plantId);
+    }
+
+    private void LoadPictures(InputFileChangeEventArgs e)
+    {
+        _pictures = e.GetMultipleFiles();
+        this.StateHasChanged();
+    }
+
+    private void Upload()
+    {
+        if (_plantId == "")
+        {
+            return;
+        }
+
+        /*foreach (var file in _pictures)
+        {
+            ApiInteractor.LoadPicture(file, _plantId);
+        }*/
     }
 }
